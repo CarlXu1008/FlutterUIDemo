@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_demo/Views/ListDemo.dart';
 import './TextDemo.dart';
 import './ButtonDemo.dart';
 import './FlutterGrammar.dart';
 import './TextFieldDemo.dart';
 import './ImageDemo.dart';
+import './Container.dart';
+import './Padding.dart';
+import './Center.dart';
+import './Stack.dart';
+import './ListDemo.dart';
+import 'Column.dart';
+import 'Row.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,7 +20,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  final viewList = ['FlutterGrammar','text', 'button', 'TextField', 'image', 'List', 'grid'];
+  final viewList = ['FlutterGrammar','text', 'button', 'TextField', 'image', 'Container', 
+  'Padding', 'Center', 'Stack', 'List', 'Column', 'Row'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +67,24 @@ class _HomePageState extends State<HomePage> {
     } else if (txt == "image") {
           Navigator.push(context,
           MaterialPageRoute(builder: (context) => ImageViewWidget()));
+    } else if (txt == "Container") {
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => ContainerDemo()));
+    } else if (txt == "Center") {
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => CenterDemo()));
+    } else if (txt == "Stack") {
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => StackDemo()));
+    } else if (txt == "List") {
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => ListDemo()));
+    } else if (txt == "Column") {
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => ColumnDemo()));
+    } else if (txt == "Row") {
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => RowDemo()));
     } else {
       print(txt); 
     }
