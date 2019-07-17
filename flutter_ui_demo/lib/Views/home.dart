@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import './TextDemo.dart';
 import './ButtonDemo.dart';
+import './FlutterGrammar.dart';
+import './TextFieldDemo.dart';
+import './ImageDemo.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,7 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  final viewList = ['text', 'button', 'List', 'grid'];
+  final viewList = ['FlutterGrammar','text', 'button', 'TextField', 'image', 'List', 'grid'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,14 +43,23 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _pushSaved(String txt) {
-    if (txt == "text") {
+    if (txt == "FlutterGrammar") {
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => FlutterGarmmar()));
+    } else if (txt == "text") {
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => TextDemo()));
     } else if (txt == "button") {
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => ButtonDemo()));
+    } else if (txt == "TextField") {
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => TextFieldPage()));
+    } else if (txt == "image") {
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => ImageViewWidget()));
     } else {
-      print(txt);
+      print(txt); 
     }
   }
      
