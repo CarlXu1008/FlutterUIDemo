@@ -28,7 +28,7 @@ class _PaddingDemo extends State<PaddingDemo> {
             Padding(
               //上下各添加8像素补白
               padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Text("I am Jack"),
+              child: Text("I am Carl"),
             ),
             Padding(
               // 分别指定四个方向的补白
