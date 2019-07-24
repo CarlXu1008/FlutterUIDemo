@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_demo/Views/ListDemo.dart';
+import 'package:flutter_ui_demo/Views/Stack.dart' as prefix0;
 import './TextDemo.dart';
 import './ButtonDemo.dart';
 import './FlutterGrammar.dart';
@@ -12,6 +13,10 @@ import './Stack.dart';
 import './ListDemo.dart';
 import 'Column.dart';
 import 'Row.dart';
+import './GridViewDemo.dart';
+import './ListViewDemo.dart';
+import './StackViewDemo.dart';
+import './Card.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,7 +26,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   final viewList = ['FlutterGrammar','text', 'button', 'TextField', 'image', 'Container', 
-  'Padding', 'Center', 'Stack', 'List', 'Column', 'Row'];
+  'Padding', 'Center', 'Stack', 'List', 'Column', 'Row', 'GridViewDemo', 'ListViewDemo', 'StackViewDemo', 'Card'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,6 +90,18 @@ class _HomePageState extends State<HomePage> {
     } else if (txt == "Row") {
           Navigator.push(context,
           MaterialPageRoute(builder: (context) => RowDemo()));
+    } else if (txt == "GridViewDemo") {
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => GridViewDemo()));
+    } else if (txt == "ListViewDemo") {
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => ListViewDemo()));
+    } else if (txt == "StackViewDemo") {
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => StackViewDemo()));
+    } else if (txt == "Card") {
+          Navigator.push(context,
+          MaterialPageRoute(builder: (context) => CardDemo()));
     } else {
       print(txt); 
     }

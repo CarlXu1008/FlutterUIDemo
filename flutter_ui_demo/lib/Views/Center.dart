@@ -11,9 +11,9 @@ class _CenterDemo extends State<CenterDemo> {
     return Scaffold(
       appBar: AppBar(
         title: Text('ListDemo'),
-      ),
-  body: new Center(child: new Text("我是中心"),
-  heightFactor: 100,)
+        ),
+        body: new Center(child: new Text("我是中心"),
+        heightFactor: 100,)
     );
   }
 }
