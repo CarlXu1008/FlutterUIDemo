@@ -17,10 +17,20 @@ class _RowDemo extends State<RowDemo> {
           buildImageView(),
           getTitleRow(),
           getButtonRow(),
-          buildText()
+          buildText(),
+          testRow()
         ],
       )
     );
+  }
+
+  Widget testRow() {
+    return new Row(children: <Widget>[
+      Expanded(child: Container(color: Colors.yellow,height: 60),flex: 1,),
+      Container(color: Colors.red, width: 100, height: 180,),
+      Container(color: Colors.black, width: 60, height: 80,),
+      Expanded(child: Container(color: Colors.green,height: 60),flex: 1,),
+    ],);
   }
 
   Widget getTitleRow() {

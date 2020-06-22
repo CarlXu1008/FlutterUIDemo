@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter_ui_demo/Views/FirstScreen.dart';
 import 'package:flutter_ui_demo/Views/home.dart';
 
 void main() => runApp(new MyApp());
@@ -14,6 +15,9 @@ class MyApp extends StatelessWidget {
       ),
       // home: RandomWords(),
       home: HomePage(),
+      routes: {
+        "second_page": (context)=>SecondPage(),
+      },
     );
   }
 }

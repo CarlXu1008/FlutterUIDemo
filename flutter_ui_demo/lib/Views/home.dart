@@ -1,3 +1,4 @@
+// import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_demo/Views/ListDemo.dart';
 import 'package:flutter_ui_demo/Views/Stack.dart' as prefix0;
@@ -17,16 +18,54 @@ import './GridViewDemo.dart';
 import './ListViewDemo.dart';
 import './StackViewDemo.dart';
 import './Card.dart';
+import './CustomScrollView.dart';
+import './ScrollController.dart';
+import './Cake.dart';
+import './TouchEvent.dart';
+import './MyHomePage.dart';
+import 'package:event_bus/event_bus.dart';
+import './FirstScreen.dart';
+
+EventBus eventBus = new EventBus();
+
+class CustomEvent {
+  String msg;
+  CustomEvent(this.msg);
+}
 
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
   final viewList = ['FlutterGrammar','text', 'button', 'TextField', 'image', 'Container', 
-  'Padding', 'Center', 'Stack', 'List', 'Column', 'Row', 'GridViewDemo', 'ListViewDemo', 'StackViewDemo', 'Card'];
+  'Padding', 'Center', 'Stack', 'List', 'Column', 'Row', 'GridViewDemo', 'ListViewDemo', 
+  'StackViewDemo', 'Card', 'CustomScrollView', 'ScrollController', 'Cake', 'TouchEvent',
+  'MyHomePage', 'FirstScreen'];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print('initState');
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    print('dispose');
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // TODO: implement didChangeAppLifecycleState
+    super.didChangeAppLifecycleState(state);
+    print('$state');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,8 +141,20 @@ class _HomePageState extends State<HomePage> {
     } else if (txt == "Card") {
           Navigator.push(context,
           MaterialPageRoute(builder: (context) => CardDemo()));
+    } else if (txt == "CustomScrollView") {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => CustomScrollViewDemo()));
+    } else if (txt == "ScrollController") {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ScrollControllerDemo()));
+    } else if (txt == "Cake") {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => Cake()));
+    } else if (txt == "TouchEvent") {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => TouchEventDemo()));
+    } else if (txt == "MyHomePage") {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage()));
+    } else if (txt == "FirstScreen") {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => FirstScreen()));
     } else {
-      print(txt); 
+      print(txt);  
     }
   }
      
